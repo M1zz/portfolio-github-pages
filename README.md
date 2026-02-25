@@ -2,6 +2,8 @@
 
 iOS Developer · Educator · Community Builder
 
+**https://m1zz.github.io/portfolio-github-pages/**
+
 ## 배포
 
 `main` 브랜치에 push하면 GitHub Actions가 자동으로 GitHub Pages에 배포합니다.
