@@ -439,6 +439,106 @@
 
   .course-card:hover .course-link-hint { color: var(--accent-gold); }
 
+  /* ===== WRITING ===== */
+  .writing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .writing-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .writing-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-hover);
+    transform: translateY(-4px);
+  }
+
+  .writing-card--featured {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .writing-featured-visual {
+    flex-shrink: 0;
+    width: 200px;
+    height: 140px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .writing-featured-visual span {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    padding: 0 1rem;
+    line-height: 1.3;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .writing-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 100px;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+
+  .writing-badge--guide { background: #a78bfa18; color: var(--accent-purple); }
+  .writing-badge--blog { background: #d4a85318; color: var(--accent-gold); }
+
+  .writing-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+  }
+
+  .writing-card--featured .writing-title { font-size: 1.2rem; }
+
+  .writing-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .writing-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--text-dim);
+    margin-top: 0.75rem;
+  }
+
+  .writing-card:hover .writing-meta { color: var(--accent-gold); }
+
+  .writing-more { margin-top: 1.5rem; text-align: center; }
+
+  @media (max-width: 768px) {
+    .writing-card--featured { flex-direction: column; }
+    .writing-featured-visual { width: 100%; height: 120px; }
+  }
+
   /* ===== TALKS ===== */
   .talks-grid {
     display: grid;
@@ -605,6 +705,7 @@
     <div class="nav-links">
       <a href="#apps">Apps</a>
       <a href="#teaching">Teaching</a>
+      <a href="#writing">Writing</a>
       <a href="#talks">Talks</a>
       <a href="#contact">Contact</a>
     </div>
@@ -746,6 +847,61 @@
   </div>
 </section>
 
+<!-- ===== WRITING ===== -->
+<section id="writing" class="section animate-on-scroll">
+  <div class="container">
+    <p class="section-label">Writing & Guides</p>
+    <h2 class="section-title">쓰고 만든 것들</h2>
+    <p class="section-desc">경험과 인사이트를 글과 가이드로 정리합니다.</p>
+
+    <div class="writing-grid">
+      <a class="writing-card writing-card--featured" href="https://m1zz.github.io/ClaudeCode101/" target="_blank">
+        <div class="writing-featured-visual">
+          <span>Claude Code<br>101</span>
+        </div>
+        <div>
+          <span class="writing-badge writing-badge--guide">Open Guide · 11 Modules</span>
+          <h3 class="writing-title">Claude Code 101 — 완전 입문 가이드</h3>
+          <p class="writing-desc">비개발자도 따라할 수 있는 Claude Code 한국어 입문서. 터미널 기초부터 실전 앱 제작까지 16~22시간 커리큘럼.</p>
+          <div class="writing-meta">&rarr; 가이드 사이트 바로가기</div>
+        </div>
+      </a>
+
+      <a class="writing-card" href="https://leeo.ghost.io/claude-code-101-hangugeo-ibmun-gaideureul-mandeun-iyu/" target="_blank">
+        <span class="writing-badge writing-badge--blog">Blog</span>
+        <h3 class="writing-title">Claude Code 101 — 한국어 입문 가이드를 만든 이유</h3>
+        <p class="writing-desc">바이브 코딩에 빠진 개발자가 주변의 질문에 답하다 체계적인 한국어 자료를 만들게 된 이야기.</p>
+        <div class="writing-meta">2026.02.23 · 9 min read</div>
+      </a>
+
+      <a class="writing-card" href="https://leeo.ghost.io/naneun-nuguege-mueoseul-eoddeohge-jeondalhal-geosinga-baibeukoding-jeone-cajaya-hal-jilmune-dabeul-cajneun-beob/" target="_blank">
+        <span class="writing-badge writing-badge--blog">Blog</span>
+        <h3 class="writing-title">나는 누구에게, 무엇을, 어떻게 전달할 것인가?</h3>
+        <p class="writing-desc">바이브코딩 전에 찾아야 할 질문. 돈을 버는 개발자와 그렇지 못한 개발자를 나누는 원초적 요소.</p>
+        <div class="writing-meta">2026.02.25 · Blog</div>
+      </a>
+
+      <a class="writing-card" href="https://leeo.ghost.io/1in-gaebaljaga-doneul-beoneun-jinjja-iyu-seonggong-sarye-haebu/" target="_blank">
+        <span class="writing-badge writing-badge--blog">Blog</span>
+        <h3 class="writing-title">1인 개발자가 돈을 버는 진짜 이유 — 성공 사례 해부</h3>
+        <p class="writing-desc">실제 수익을 낸 1인 개발자들의 사례를 분석하며, 바이브 코딩 너머의 본질을 이야기합니다.</p>
+        <div class="writing-meta">2026.02.24 · Blog</div>
+      </a>
+
+      <a class="writing-card" href="https://leeo.ghost.io/higlab-apple-gisulyi-jidoreul-sone-neohda/" target="_blank">
+        <span class="writing-badge writing-badge--guide">Project</span>
+        <h3 class="writing-title">HIGLab — Apple 기술의 지도를 손에 넣다</h3>
+        <p class="writing-desc">Apple 플랫폼 기술을 체계적으로 정리하며 iOS 개발 능력을 한 단계 끌어올리는 프로젝트.</p>
+        <div class="writing-meta">2026.02.20 · Blog</div>
+      </a>
+    </div>
+
+    <div class="writing-more">
+      <a href="https://leeo.ghost.io/" target="_blank" class="btn btn--outline">블로그 전체 글 보기 &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <!-- ===== TALKS ===== -->
 <section id="talks" class="section animate-on-scroll">
   <div class="container">
@@ -845,6 +1001,7 @@
       <a href="mailto:leeo@kakao.com" class="contact-link">Email</a>
       <a href="https://www.youtube.com/@Leeo25" target="_blank" class="contact-link">YouTube</a>
       <a href="https://github.com/M1zz" target="_blank" class="contact-link">GitHub</a>
+      <a href="https://leeo.ghost.io/" target="_blank" class="contact-link">Blog</a>
       <a href="https://www.inflearn.com/users/604991/@leeo" target="_blank" class="contact-link">Inflearn</a>
       <a href="https://fastcampus.co.kr/dev_online_ios" target="_blank" class="contact-link">Fastcampus</a>
       <a href="https://apps.apple.com/us/app/clip-keyboard-quick-phrases/id1543660502" target="_blank" class="contact-link">App Store</a>
