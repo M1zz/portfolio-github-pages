@@ -51,668 +51,188 @@
 
   /* ===== NAV ===== */
   nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     padding: 1.25rem 2rem;
     backdrop-filter: blur(20px);
     background: rgba(10,10,12,0.8);
     border-bottom: 1px solid var(--border);
   }
-
-  nav .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    text-decoration: none;
-  }
-
+  nav .container { display: flex; justify-content: space-between; align-items: center; }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--text-primary); text-decoration: none; }
   .nav-links { display: flex; gap: 2rem; }
-
-  .nav-links a {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    text-decoration: none;
-    letter-spacing: 0.03em;
-    transition: color 0.2s;
-  }
-
+  .nav-links a { font-size: 0.8rem; color: var(--text-secondary); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
   .nav-links a:hover { color: var(--accent-gold); }
 
   /* ===== HERO ===== */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    padding-top: 5rem;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -200px;
-    right: -200px;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, var(--accent-gold-dim), transparent 70%);
-    animation: pulse 8s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 0.3; transform: scale(1); }
-    50% { opacity: 0.6; transform: scale(1.1); }
-  }
-
+  .hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 5rem; }
+  .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, var(--accent-gold-dim), transparent 70%); animation: pulse 8s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 0.6; transform: scale(1.1); } }
   .hero-content { position: relative; z-index: 1; }
+  .hero-label { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-gold); margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
+  .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 700; line-height: 1.05; margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
+  .hero-name span { background: linear-gradient(135deg, var(--text-primary), var(--accent-gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-desc { font-size: 1.2rem; color: var(--text-secondary); max-width: 580px; font-weight: 300; opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s; }
+  .hero-cta { display: flex; gap: 1rem; margin-top: 2.5rem; opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s; flex-wrap: wrap; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-  .hero-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent-gold);
-    margin-bottom: 1.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.2s;
-  }
-
-  .hero-name {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 8vw, 6.5rem);
-    font-weight: 700;
-    line-height: 1.05;
-    margin-bottom: 1.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.4s;
-  }
-
-  .hero-name span {
-    background: linear-gradient(135deg, var(--text-primary), var(--accent-gold));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .hero-desc {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    max-width: 580px;
-    font-weight: 300;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.6s;
-  }
-
-  .hero-cta {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards 0.8s;
-    flex-wrap: wrap;
-  }
-
-  .btn {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    text-decoration: none;
-    letter-spacing: 0.05em;
-    transition: all 0.2s;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .btn--primary {
-    background: var(--accent-gold);
-    color: var(--bg-primary);
-    font-weight: 500;
-  }
-
+  .btn { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; letter-spacing: 0.05em; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
+  .btn--primary { background: var(--accent-gold); color: var(--bg-primary); font-weight: 500; }
   .btn--primary:hover { background: #e0b564; transform: translateY(-2px); }
-
-  .btn--outline {
-    border: 1px solid var(--border);
-    color: var(--text-secondary);
-  }
-
+  .btn--outline { border: 1px solid var(--border); color: var(--text-secondary); }
   .btn--outline:hover { border-color: var(--accent-gold); color: var(--text-primary); }
 
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+  /* ===== NUMBERS ===== */
+  .numbers { padding: 4rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .numbers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
+  .number-item-value { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: var(--accent-gold); }
+  .number-item-label { font-size: 0.8rem; color: var(--text-dim); margin-top: 0.25rem; }
+
+  /* ===== SECTION ===== */
+  .section { padding: 6rem 0; border-bottom: 1px solid var(--border); }
+  .section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 0.75rem; }
+  .section-desc { color: var(--text-secondary); font-weight: 300; max-width: 550px; margin-bottom: 3rem; }
+  .subsection-title { font-size: 1.1rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 1.25rem; margin-top: 3rem; padding-left: 0.5rem; border-left: 3px solid var(--accent-gold); }
+  .subsection-title:first-of-type { margin-top: 0; }
+
+  /* ===== GENERIC CARD ===== */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; }
+  .card-grid--small { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+  .card {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 1.75rem; transition: all 0.3s ease; text-decoration: none; color: inherit; display: block;
   }
+  .card:hover { background: var(--bg-card-hover); border-color: var(--border-hover); transform: translateY(-4px); }
+  .card--row { display: flex; gap: 1.25rem; align-items: flex-start; }
+  .card--featured { grid-column: 1 / -1; display: flex; gap: 2rem; align-items: center; }
 
-  /* ===== NUMBERS BAR ===== */
-  .numbers {
-    padding: 4rem 0;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+  .card-visual {
+    flex-shrink: 0; width: 60px; height: 60px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+    background: var(--bg-card-hover); border: 1px solid var(--border);
   }
+  .card-visual--wide { width: 200px; height: 140px; border-radius: 12px; border: none; }
+  .card-visual img { width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
 
-  .numbers-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    text-align: center;
+  .card-badge {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 0.2rem 0.5rem; border-radius: 100px; display: inline-block; margin-bottom: 0.5rem;
   }
+  .badge--blue { background: #4a9eff18; color: var(--accent-blue); }
+  .badge--gold { background: #d4a85318; color: var(--accent-gold); }
+  .badge--green { background: #34d39918; color: var(--accent-green); }
+  .badge--purple { background: #a78bfa18; color: var(--accent-purple); }
+  .badge--red { background: #f8717118; color: var(--accent-red); }
 
-  .number-item-value {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--accent-gold);
-  }
+  .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .card--featured .card-title { font-size: 1.2rem; }
+  .card-desc { font-size: 0.85rem; color: var(--text-secondary); font-weight: 300; line-height: 1.5; }
+  .card-hint { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--text-dim); margin-top: 0.5rem; }
+  .card:hover .card-hint { color: var(--accent-gold); }
+  .card-info { flex: 1; min-width: 0; }
 
-  .number-item-label {
-    font-size: 0.8rem;
-    color: var(--text-dim);
-    margin-top: 0.25rem;
-    letter-spacing: 0.03em;
-  }
-
-  /* ===== SECTION COMMON ===== */
-  .section {
-    padding: 6rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .section-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    margin-bottom: 0.75rem;
-  }
-
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 2.8rem);
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-  }
-
-  .section-desc {
-    color: var(--text-secondary);
-    font-weight: 300;
-    max-width: 550px;
-    margin-bottom: 3rem;
-  }
-
-  /* ===== APP CARDS ===== */
-  .app-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.25rem;
-  }
-
-  .app-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 1.75rem;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    gap: 1.25rem;
-    align-items: flex-start;
-  }
-
-  .app-card:hover {
-    background: var(--bg-card-hover);
-    border-color: var(--border-hover);
-    transform: translateY(-4px);
-  }
-
-  .app-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 14px;
-    flex-shrink: 0;
-    object-fit: cover;
-    background: var(--bg-card-hover);
-  }
-
-  .app-icon-placeholder {
-    width: 60px;
-    height: 60px;
-    border-radius: 14px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    background: var(--bg-card-hover);
-    border: 1px solid var(--border);
-  }
-
-  .app-info { flex: 1; min-width: 0; }
-
-  .app-badge {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.2rem 0.5rem;
-    border-radius: 100px;
-    display: inline-block;
-    margin-bottom: 0.5rem;
-    background: #4a9eff18;
-    color: var(--accent-blue);
-  }
-
-  .app-name {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 0.3rem;
-  }
-
-  .app-desc {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    font-weight: 300;
-    line-height: 1.5;
-  }
-
-  .app-link-hint {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--text-dim);
-    margin-top: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-  }
-
-  .app-card:hover .app-link-hint { color: var(--accent-gold); }
-
-  /* ===== COURSE CARDS ===== */
-  .course-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.25rem;
-  }
-
+  /* ===== COURSE THUMB CARDS ===== */
   .course-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    color: inherit;
-    display: block;
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+    overflow: hidden; transition: all 0.3s ease; text-decoration: none; color: inherit; display: block;
   }
+  .course-card:hover { background: var(--bg-card-hover); border-color: var(--border-hover); transform: translateY(-4px); }
+  .course-thumb { width: 100%; height: 160px; display: flex; align-items: center; justify-content: center; }
+  .course-thumb--inflearn { background: linear-gradient(135deg, #1dc078, #15845a); }
+  .course-thumb--fastcampus { background: linear-gradient(135deg, #e8344e, #c41e3a); }
+  .course-thumb--youtube { background: linear-gradient(135deg, #ff0000, #cc0000); }
+  .course-platform-name { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; font-weight: 700; color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .course-body { padding: 1.25rem; }
+  .course-title { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .course-desc { font-size: 0.8rem; color: var(--text-secondary); font-weight: 300; line-height: 1.5; }
+  .course-hint { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--text-dim); margin-top: 0.5rem; }
+  .course-card:hover .course-hint { color: var(--accent-gold); }
 
-  .course-card:hover {
-    background: var(--bg-card-hover);
-    border-color: var(--border-hover);
-    transform: translateY(-4px);
+  /* ===== INLINE COURSE LIST ===== */
+  .course-list { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; }
+  .course-list-item {
+    display: flex; align-items: center; gap: 1rem; padding: 0.75rem 1rem;
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+    text-decoration: none; color: inherit; transition: all 0.2s;
   }
+  .course-list-item:hover { background: var(--bg-card-hover); border-color: var(--border-hover); }
+  .course-list-item .badge { flex-shrink: 0; }
+  .course-list-name { font-size: 0.9rem; font-weight: 500; flex: 1; }
+  .course-list-arrow { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--text-dim); }
+  .course-list-item:hover .course-list-arrow { color: var(--accent-gold); }
 
-  .course-thumb {
-    width: 100%;
-    height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+  /* ===== PLAYLIST GRID ===== */
+  .playlist-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+  .playlist-card {
+    display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem;
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+    text-decoration: none; color: inherit; transition: all 0.2s;
   }
-
-  .course-thumb--inflearn {
-    background: linear-gradient(135deg, #1dc078 0%, #15845a 100%);
-  }
-
-  .course-thumb--fastcampus {
-    background: linear-gradient(135deg, #e8344e 0%, #c41e3a 100%);
-  }
-
-  .course-thumb--youtube {
-    background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
-  }
-
-  .course-thumb--bootcamp {
-    background: linear-gradient(135deg, #d4a853 0%, #b8922e 100%);
-  }
-
-  .course-platform-name {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
-    letter-spacing: 0.05em;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  }
-
-  .course-body { padding: 1.5rem; }
-
-  .course-badge {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.2rem 0.5rem;
-    border-radius: 100px;
-    display: inline-block;
-    margin-bottom: 0.5rem;
-    background: #d4a85318;
-    color: var(--accent-gold);
-  }
-
-  .course-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 0.3rem;
-  }
-
-  .course-desc {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    font-weight: 300;
-    line-height: 1.5;
-  }
-
-  .course-link-hint {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--text-dim);
-    margin-top: 0.75rem;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-  }
-
-  .course-card:hover .course-link-hint { color: var(--accent-gold); }
-
-  /* ===== WRITING ===== */
-  .writing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.25rem;
-  }
-
-  .writing-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 1.75rem;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-
-  .writing-card:hover {
-    background: var(--bg-card-hover);
-    border-color: var(--border-hover);
-    transform: translateY(-4px);
-  }
-
-  .writing-card--featured {
-    grid-column: 1 / -1;
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  .writing-featured-visual {
-    flex-shrink: 0;
-    width: 200px;
-    height: 140px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .writing-featured-visual span {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: white;
-    text-align: center;
-    padding: 0 1rem;
-    line-height: 1.3;
-    font-family: 'JetBrains Mono', monospace;
-  }
-
-  .writing-badge {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.2rem 0.5rem;
-    border-radius: 100px;
-    display: inline-block;
-    margin-bottom: 0.5rem;
-  }
-
-  .writing-badge--guide { background: #a78bfa18; color: var(--accent-purple); }
-  .writing-badge--blog { background: #d4a85318; color: var(--accent-gold); }
-
-  .writing-title {
-    font-size: 1.05rem;
-    font-weight: 700;
-    margin-bottom: 0.4rem;
-    line-height: 1.4;
-  }
-
-  .writing-card--featured .writing-title { font-size: 1.2rem; }
-
-  .writing-desc {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    font-weight: 300;
-    line-height: 1.5;
-  }
-
-  .writing-meta {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.6rem;
-    color: var(--text-dim);
-    margin-top: 0.75rem;
-  }
-
-  .writing-card:hover .writing-meta { color: var(--accent-gold); }
-
-  .writing-more { margin-top: 1.5rem; text-align: center; }
-
-  @media (max-width: 768px) {
-    .writing-card--featured { flex-direction: column; }
-    .writing-featured-visual { width: 100%; height: 120px; }
-  }
+  .playlist-card:hover { background: var(--bg-card-hover); border-color: var(--border-hover); }
+  .playlist-icon { font-size: 1.2rem; flex-shrink: 0; }
+  .playlist-name { font-size: 0.8rem; font-weight: 500; flex: 1; line-height: 1.3; }
+  .playlist-arrow { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--text-dim); }
+  .playlist-card:hover .playlist-arrow { color: var(--accent-gold); }
 
   /* ===== TALKS ===== */
-  .talks-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
-  }
-
-  .talk-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-
-  .talk-card:hover {
-    border-color: var(--border-hover);
-    transform: translateY(-3px);
-  }
-
-  .talk-thumb {
-    width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    display: block;
-    background: var(--bg-card-hover);
-  }
-
+  .talks-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+  .talk-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: all 0.3s ease; text-decoration: none; color: inherit; display: block; }
+  .talk-card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
+  .talk-thumb { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: var(--bg-card-hover); }
   .talk-body { padding: 1rem 1.25rem; }
-
-  .talk-title {
-    font-size: 0.85rem;
-    font-weight: 500;
-    line-height: 1.4;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .talk-meta {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.6rem;
-    color: var(--text-dim);
-    margin-top: 0.4rem;
-  }
-
-  .talks-more {
-    margin-top: 1.5rem;
-    text-align: center;
-  }
+  .talk-title { font-size: 0.85rem; font-weight: 500; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .talk-meta { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--text-dim); margin-top: 0.4rem; }
+  .section-more { margin-top: 1.5rem; text-align: center; }
 
   /* ===== TECH STACK ===== */
-  .stack-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-  }
-
-  .stack-item {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    padding: 0.45rem 0.9rem;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    background: var(--bg-card);
-    color: var(--text-secondary);
-    transition: all 0.2s;
-  }
-
-  .stack-item:hover {
-    border-color: var(--accent-gold);
-    color: var(--text-primary);
-  }
+  .stack-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .stack-item { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; padding: 0.45rem 0.9rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-secondary); transition: all 0.2s; }
+  .stack-item:hover { border-color: var(--accent-gold); color: var(--text-primary); }
 
   /* ===== CONTACT ===== */
-  .contact {
-    padding: 6rem 0;
-    text-align: center;
-  }
+  .contact { padding: 6rem 0; text-align: center; }
+  .contact-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; margin-bottom: 0.75rem; }
+  .contact-desc { color: var(--text-secondary); font-weight: 300; margin-bottom: 2.5rem; }
+  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .contact-link { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; padding: 0.7rem 1.5rem; border-radius: 8px; border: 1px solid var(--border); color: var(--text-secondary); text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
+  .contact-link:hover { border-color: var(--accent-gold); color: var(--text-primary); transform: translateY(-2px); }
 
-  .contact-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-  }
-
-  .contact-desc {
-    color: var(--text-secondary);
-    font-weight: 300;
-    margin-bottom: 2.5rem;
-  }
-
-  .contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .contact-link {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    padding: 0.7rem 1.5rem;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: all 0.2s;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .contact-link:hover {
-    border-color: var(--accent-gold);
-    color: var(--text-primary);
-    transform: translateY(-2px);
-  }
-
-  /* ===== FOOTER ===== */
-  footer {
-    padding: 2rem 0;
-    border-top: 1px solid var(--border);
-    text-align: center;
-  }
-
-  .footer-copy {
-    font-size: 0.75rem;
-    color: var(--text-dim);
-  }
+  footer { padding: 2rem 0; border-top: 1px solid var(--border); text-align: center; }
+  .footer-copy { font-size: 0.75rem; color: var(--text-dim); }
 
   /* ===== RESPONSIVE ===== */
   @media (max-width: 768px) {
     .numbers-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
     .nav-links { display: none; }
-    .app-grid, .course-grid { grid-template-columns: 1fr; }
-    .talks-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .card-grid, .card-grid--small { grid-template-columns: 1fr; }
+    .card--featured { flex-direction: column; }
+    .card-visual--wide { width: 100%; height: 120px; }
+    .talks-grid { grid-template-columns: 1fr; }
+    .playlist-grid { grid-template-columns: 1fr; }
   }
 
-  /* Scroll animations */
-  .animate-on-scroll {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
-  }
-
-  .animate-on-scroll.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .animate-on-scroll { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+  .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body>
 
-<!-- ===== NAV ===== -->
+<!-- NAV -->
 <nav>
   <div class="container">
     <a href="#" class="nav-logo">Leeo</a>
     <div class="nav-links">
-      <a href="#apps">Apps</a>
+      <a href="#projects">Projects</a>
       <a href="#teaching">Teaching</a>
-      <a href="#writing">Writing</a>
       <a href="#talks">Talks</a>
+      <a href="#writing">Writing</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
 </nav>
 
-<!-- ===== HERO ===== -->
+<!-- HERO -->
 <section class="hero">
   <div class="container hero-content">
     <p class="hero-label">iOS Developer · Educator · Community Builder</p>
@@ -728,72 +248,102 @@
   </div>
 </section>
 
-<!-- ===== NUMBERS ===== -->
+<!-- NUMBERS -->
 <section class="numbers animate-on-scroll">
   <div class="container">
     <div class="numbers-grid">
-      <div>
-        <div class="number-item-value">10+</div>
-        <div class="number-item-label">Years in iOS</div>
-      </div>
-      <div>
-        <div class="number-item-value">20+</div>
-        <div class="number-item-label">Apps on Store</div>
-      </div>
-      <div>
-        <div class="number-item-value">15+</div>
-        <div class="number-item-label">Conference Talks</div>
-      </div>
-      <div>
-        <div class="number-item-value">3</div>
-        <div class="number-item-label">Education Platforms</div>
-      </div>
+      <div><div class="number-item-value">10+</div><div class="number-item-label">Years in iOS</div></div>
+      <div><div class="number-item-value">20+</div><div class="number-item-label">Apps on Store</div></div>
+      <div><div class="number-item-value">15+</div><div class="number-item-label">Conference Talks</div></div>
+      <div><div class="number-item-value">8K+</div><div class="number-item-label">Students</div></div>
     </div>
   </div>
 </section>
 
-<!-- ===== APPS ===== -->
-<section id="apps" class="section animate-on-scroll">
+<!-- ===== PROJECTS ===== -->
+<section id="projects" class="section animate-on-scroll">
   <div class="container">
-    <p class="section-label">App Portfolio</p>
+    <p class="section-label">Projects</p>
     <h2 class="section-title">만든 것들</h2>
-    <p class="section-desc">App Store에서 20개 이상의 앱을 운영하고 있습니다.</p>
+    <p class="section-desc">iOS 앱부터 웹 가이드, 교육 도구까지. 직접 기획하고 만든 결과물들입니다.</p>
 
-    <div class="app-grid">
-      <a class="app-card" href="https://apps.apple.com/us/app/clip-keyboard-quick-phrases/id1543660502" target="_blank">
-        <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f6/94/4e/f6944e18-78ff-921f-5263-50990ba066b7/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/100x100bb.jpg" alt="ClipKeyboard" loading="lazy">
-        <div class="app-info">
-          <span class="app-badge">Productivity</span>
-          <h3 class="app-name">ClipKeyboard</h3>
-          <p class="app-desc">클립보드 관리 키보드 앱. 자주 쓰는 문구를 키보드에서 바로 입력.</p>
-          <div class="app-link-hint">&rarr; App Store에서 보기</div>
+    <!-- Web Projects -->
+    <h3 class="subsection-title">Web Projects</h3>
+    <div class="card-grid">
+      <a class="card card--featured" href="https://m1zz.github.io/ClaudeCode101/" target="_blank">
+        <div class="card-visual card-visual--wide" style="background:linear-gradient(135deg,#a78bfa,#7c3aed);">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:0.9rem;font-weight:700;color:white;text-align:center;line-height:1.3;">Claude Code<br>101</span>
+        </div>
+        <div class="card-info">
+          <span class="card-badge badge--purple">Open Guide · 11 Modules</span>
+          <h3 class="card-title">Claude Code 101 — 완전 입문 가이드</h3>
+          <p class="card-desc">비개발자도 따라할 수 있는 Claude Code 한국어 입문서. 터미널 기초부터 실전 앱 제작까지 16~22시간 커리큘럼.</p>
+          <div class="card-hint">&rarr; 가이드 사이트 바로가기</div>
         </div>
       </a>
 
-      <div class="app-card">
-        <div class="app-icon-placeholder">🗺️</div>
-        <div class="app-info">
-          <span class="app-badge">Utility</span>
-          <h3 class="app-name">Rapo Map</h3>
-          <p class="app-desc">지도 기반 유틸리티 앱. 위치 기반 서비스로 차별화된 경험 제공.</p>
+      <a class="card card--row" href="https://m1zz.github.io/HIGLab/" target="_blank">
+        <div class="card-visual" style="background:linear-gradient(135deg,#4a9eff,#2563eb);border:none;">
+          <span style="font-size:1.5rem;">🔬</span>
+        </div>
+        <div class="card-info">
+          <span class="card-badge badge--blue">Learning Lab · 50 Frameworks</span>
+          <h3 class="card-title">HIGLab</h3>
+          <p class="card-desc">Apple 핵심 프레임워크 50개를 코드로 실습하는 학습 플랫폼. 블로그 튜토리얼 + DocC 문서 + 샘플 프로젝트.</p>
+          <div class="card-hint">&rarr; HIGLab 바로가기</div>
+        </div>
+      </a>
+
+      <a class="card card--row" href="https://mentee-quiz-app.vercel.app" target="_blank">
+        <div class="card-visual" style="background:linear-gradient(135deg,#34d399,#059669);border:none;">
+          <span style="font-size:1.5rem;">🧬</span>
+        </div>
+        <div class="card-info">
+          <span class="card-badge badge--green">Diagnostic Tool · 32 Types</span>
+          <h3 class="card-title">학습 유형 진단</h3>
+          <p class="card-desc">15개 질문, 5가지 차원으로 32가지 학습 유형을 진단. 멘티 맞춤 학습 전략과 멘토 지도 가이드 제공.</p>
+          <div class="card-hint">&rarr; 진단 시작하기</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- iOS Apps -->
+    <h3 class="subsection-title" style="margin-top:3.5rem;">iOS Apps</h3>
+    <div class="card-grid">
+      <a class="card card--row" href="https://apps.apple.com/us/app/clip-keyboard-quick-phrases/id1543660502" target="_blank">
+        <img class="card-visual" style="border:none;" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f6/94/4e/f6944e18-78ff-921f-5263-50990ba066b7/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/100x100bb.jpg" alt="ClipKeyboard" loading="lazy">
+        <div class="card-info">
+          <span class="card-badge badge--blue">Productivity</span>
+          <h3 class="card-title">ClipKeyboard</h3>
+          <p class="card-desc">자주 쓰는 문구를 키보드에서 바로 입력하는 클립보드 관리 앱.</p>
+          <div class="card-hint">&rarr; App Store</div>
+        </div>
+      </a>
+
+      <div class="card card--row">
+        <div class="card-visual">🗺️</div>
+        <div class="card-info">
+          <span class="card-badge badge--blue">Utility</span>
+          <h3 class="card-title">Rapo Map</h3>
+          <p class="card-desc">지도 기반 유틸리티 앱. 위치 기반 서비스로 차별화된 경험 제공.</p>
         </div>
       </div>
 
-      <div class="app-card">
-        <div class="app-icon-placeholder">🔔</div>
-        <div class="app-info">
-          <span class="app-badge">Alert</span>
-          <h3 class="app-name">Twice Alert</h3>
-          <p class="app-desc">반복 알림 관리 앱. 잊지 말아야 할 일을 두 번 알려주는 일상 도구.</p>
+      <div class="card card--row">
+        <div class="card-visual">🔔</div>
+        <div class="card-info">
+          <span class="card-badge badge--blue">Alert</span>
+          <h3 class="card-title">Twice Alert</h3>
+          <p class="card-desc">잊지 말아야 할 일을 두 번 알려주는 반복 알림 관리 앱.</p>
         </div>
       </div>
 
-      <div class="app-card">
-        <div class="app-icon-placeholder">+17</div>
-        <div class="app-info">
-          <span class="app-badge" style="background:#34d39918;color:var(--accent-green)">Portfolio</span>
-          <h3 class="app-name">그 외 17+ 앱</h3>
-          <p class="app-desc">다양한 카테고리의 앱을 기획부터 출시까지 혼자서 만들고 운영하고 있습니다.</p>
+      <div class="card card--row">
+        <div class="card-visual" style="font-size:1rem;font-weight:700;color:var(--accent-green);">+17</div>
+        <div class="card-info">
+          <span class="card-badge badge--green">Portfolio</span>
+          <h3 class="card-title">그 외 17+ 앱</h3>
+          <p class="card-desc">다양한 카테고리의 앱을 기획부터 출시까지 혼자서 만들고 운영 중.</p>
         </div>
       </div>
     </div>
@@ -805,99 +355,164 @@
   <div class="container">
     <p class="section-label">Teaching</p>
     <h2 class="section-title">가르치는 것들</h2>
-    <p class="section-desc">개발 경험을 강의와 멘토링으로 나눕니다.</p>
+    <p class="section-desc">인프런 수강생 8,000명+, 평점 4.9. 개발 경험을 강의와 멘토링으로 나눕니다.</p>
 
-    <div class="course-grid">
-      <a class="course-card" href="https://www.inflearn.com/users/604991/@leeo" target="_blank">
-        <div class="course-thumb course-thumb--inflearn">
+    <!-- Inflearn -->
+    <h3 class="subsection-title">Inflearn</h3>
+    <div class="card-grid" style="grid-template-columns:1fr;">
+      <a class="course-card" href="https://www.inflearn.com/users/604991/@leeo" target="_blank" style="display:flex;overflow:hidden;">
+        <div class="course-thumb course-thumb--inflearn" style="width:200px;height:auto;min-height:140px;flex-shrink:0;">
           <span class="course-platform-name">Inflearn</span>
         </div>
-        <div class="course-body">
-          <span class="course-badge">Online Course</span>
-          <h3 class="course-title">인프런 강의</h3>
-          <p class="course-desc">Swift/SwiftUI 기반 iOS 개발 강의. AI 활용 앱 개발 커리큘럼 포함.</p>
-          <div class="course-link-hint">&rarr; 강의 목록 보기</div>
+        <div class="course-body" style="flex:1;">
+          <span class="card-badge badge--green">8,000+ 수강생 · 평점 4.9</span>
+          <h3 class="course-title">리이오의 인프런 강의</h3>
+          <p class="course-desc">Swift/SwiftUI 기반 iOS 개발 강의부터 AI 코딩 챌린지까지.</p>
+          <div class="course-hint">&rarr; 전체 강의 목록 보기</div>
         </div>
       </a>
+    </div>
+    <div class="course-list">
+      <a class="course-list-item" href="https://www.inflearn.com/course/한조각-swiftui-입문" target="_blank">
+        <span class="card-badge badge--green" style="margin:0;">Free</span>
+        <span class="course-list-name">한 조각씩 배우는 SwiftUI - 입문편</span>
+        <span class="course-list-arrow">&rarr;</span>
+      </a>
+      <a class="course-list-item" href="https://www.inflearn.com/course/게임처럼-git던전" target="_blank">
+        <span class="card-badge badge--green" style="margin:0;">Free</span>
+        <span class="course-list-name">게임처럼 공부하는 Git 던전</span>
+        <span class="course-list-arrow">&rarr;</span>
+      </a>
+      <a class="course-list-item" href="https://www.inflearn.com/course/ai와-함께하는-코딩-체험-챌린지" target="_blank">
+        <span class="card-badge badge--purple" style="margin:0;">Challenge</span>
+        <span class="course-list-name">AI와 함께하는 코딩 체험 챌린지</span>
+        <span class="course-list-arrow">&rarr;</span>
+      </a>
+    </div>
 
+    <!-- Fastcampus -->
+    <h3 class="subsection-title" style="margin-top:3.5rem;">Fastcampus</h3>
+    <div class="card-grid" style="grid-template-columns:1fr;max-width:500px;">
       <a class="course-card" href="https://fastcampus.co.kr/dev_online_ios" target="_blank">
         <div class="course-thumb course-thumb--fastcampus">
           <span class="course-platform-name">Fastcampus</span>
         </div>
         <div class="course-body">
-          <span class="course-badge">Platform Course</span>
-          <h3 class="course-title">패스트캠퍼스 강의</h3>
-          <p class="course-desc">대형 교육 플랫폼을 통한 iOS 개발 교육. 체계적 커리큘럼 제공.</p>
-          <div class="course-link-hint">&rarr; 강의 보기</div>
+          <span class="card-badge badge--red">Platform Course</span>
+          <h3 class="course-title">패스트캠퍼스 iOS 개발 강의</h3>
+          <p class="course-desc">대형 교육 플랫폼을 통한 체계적 iOS 개발 교육.</p>
+          <div class="course-hint">&rarr; 강의 보기</div>
         </div>
       </a>
+    </div>
 
-      <a class="course-card" href="https://www.youtube.com/@Leeo25" target="_blank">
-        <div class="course-thumb course-thumb--youtube">
+    <!-- YouTube -->
+    <h3 class="subsection-title" style="margin-top:3.5rem;">YouTube 개발자리</h3>
+    <div class="card-grid" style="grid-template-columns:1fr;">
+      <a class="course-card" href="https://www.youtube.com/@Leeo25" target="_blank" style="display:flex;overflow:hidden;">
+        <div class="course-thumb course-thumb--youtube" style="width:200px;height:auto;min-height:140px;flex-shrink:0;">
           <span class="course-platform-name">YouTube</span>
         </div>
-        <div class="course-body">
-          <span class="course-badge">Free Content</span>
+        <div class="course-body" style="flex:1;">
+          <span class="card-badge badge--red">Free Content</span>
           <h3 class="course-title">개발자리 채널</h3>
           <p class="course-desc">iOS 개발 팁, 앱 개발 과정, 개발자 커리어 이야기를 무료로 공유합니다.</p>
-          <div class="course-link-hint">&rarr; 채널 구경하기</div>
+          <div class="course-hint">&rarr; 채널 구경하기</div>
         </div>
       </a>
     </div>
-  </div>
-</section>
 
-<!-- ===== WRITING ===== -->
-<section id="writing" class="section animate-on-scroll">
-  <div class="container">
-    <p class="section-label">Writing & Guides</p>
-    <h2 class="section-title">쓰고 만든 것들</h2>
-    <p class="section-desc">경험과 인사이트를 글과 가이드로 정리합니다.</p>
-
-    <div class="writing-grid">
-      <a class="writing-card writing-card--featured" href="https://m1zz.github.io/ClaudeCode101/" target="_blank">
-        <div class="writing-featured-visual">
-          <span>Claude Code<br>101</span>
-        </div>
-        <div>
-          <span class="writing-badge writing-badge--guide">Open Guide · 11 Modules</span>
-          <h3 class="writing-title">Claude Code 101 — 완전 입문 가이드</h3>
-          <p class="writing-desc">비개발자도 따라할 수 있는 Claude Code 한국어 입문서. 터미널 기초부터 실전 앱 제작까지 16~22시간 커리큘럼.</p>
-          <div class="writing-meta">&rarr; 가이드 사이트 바로가기</div>
-        </div>
+    <div class="playlist-grid">
+      <a class="playlist-card" href="https://www.youtube.com/playlist?list=PL1PI2d-NlJ8vReemxqvvXMzErYNmlj-U0" target="_blank">
+        <span class="playlist-icon">🌱</span>
+        <span class="playlist-name">[Lv.0] 스위프트 유치원</span>
+        <span class="playlist-arrow">&rarr;</span>
       </a>
-
-      <a class="writing-card" href="https://leeo.ghost.io/claude-code-101-hangugeo-ibmun-gaideureul-mandeun-iyu/" target="_blank">
-        <span class="writing-badge writing-badge--blog">Blog</span>
-        <h3 class="writing-title">Claude Code 101 — 한국어 입문 가이드를 만든 이유</h3>
-        <p class="writing-desc">바이브 코딩에 빠진 개발자가 주변의 질문에 답하다 체계적인 한국어 자료를 만들게 된 이야기.</p>
-        <div class="writing-meta">2026.02.23 · 9 min read</div>
+      <a class="playlist-card" href="https://www.youtube.com/playlist?list=PL1PI2d-NlJ8usI0oHl9d8FJ-gtaqeBpgj" target="_blank">
+        <span class="playlist-icon">📱</span>
+        <span class="playlist-name">[Lv.1] App Dev Tutorial SwiftUI</span>
+        <span class="playlist-arrow">&rarr;</span>
       </a>
-
-      <a class="writing-card" href="https://leeo.ghost.io/naneun-nuguege-mueoseul-eoddeohge-jeondalhal-geosinga-baibeukoding-jeone-cajaya-hal-jilmune-dabeul-cajneun-beob/" target="_blank">
-        <span class="writing-badge writing-badge--blog">Blog</span>
-        <h3 class="writing-title">나는 누구에게, 무엇을, 어떻게 전달할 것인가?</h3>
-        <p class="writing-desc">바이브코딩 전에 찾아야 할 질문. 돈을 버는 개발자와 그렇지 못한 개발자를 나누는 원초적 요소.</p>
-        <div class="writing-meta">2026.02.25 · Blog</div>
+      <a class="playlist-card" href="https://www.youtube.com/playlist?list=PL1PI2d-NlJ8u2_o9xQDGtixeIXWi-V91F" target="_blank">
+        <span class="playlist-icon">🧮</span>
+        <span class="playlist-name">[Lv.1] 클론코딩 - 계산기앱</span>
+        <span class="playlist-arrow">&rarr;</span>
       </a>
-
-      <a class="writing-card" href="https://leeo.ghost.io/1in-gaebaljaga-doneul-beoneun-jinjja-iyu-seonggong-sarye-haebu/" target="_blank">
-        <span class="writing-badge writing-badge--blog">Blog</span>
-        <h3 class="writing-title">1인 개발자가 돈을 버는 진짜 이유 — 성공 사례 해부</h3>
-        <p class="writing-desc">실제 수익을 낸 1인 개발자들의 사례를 분석하며, 바이브 코딩 너머의 본질을 이야기합니다.</p>
-        <div class="writing-meta">2026.02.24 · Blog</div>
+      <a class="playlist-card" href="https://www.youtube.com/playlist?list=PL1PI2d-NlJ8vANKb4E3Czx0I-EpuakK5x" target="_blank">
+        <span class="playlist-icon">🔢</span>
+        <span class="playlist-name">[Lv.1] 클론코딩 - 키패드앱</span>
+        <span class="playlist-arrow">&rarr;</span>
       </a>
-
-      <a class="writing-card" href="https://leeo.ghost.io/higlab-apple-gisulyi-jidoreul-sone-neohda/" target="_blank">
-        <span class="writing-badge writing-badge--guide">Project</span>
-        <h3 class="writing-title">HIGLab — Apple 기술의 지도를 손에 넣다</h3>
-        <p class="writing-desc">Apple 플랫폼 기술을 체계적으로 정리하며 iOS 개발 능력을 한 단계 끌어올리는 프로젝트.</p>
-        <div class="writing-meta">2026.02.20 · Blog</div>
+      <a class="playlist-card" href="https://www.youtube.com/playlist?list=PL1PI2d-NlJ8sseacReEJzJLrPQRwzonU1" target="_blank">
+        <span class="playlist-icon">📐</span>
+        <span class="playlist-name">[Lv.2] SwiftUI Swift문법 기초</span>
+        <span class="playlist-arrow">&rarr;</span>
       </a>
-    </div>
-
-    <div class="writing-more">
-      <a href="https://leeo.ghost.io/" target="_blank" class="btn btn--outline">블로그 전체 글 보기 &rarr;</a>
+      <a class="playlist-card" href="https://www.youtube.com/playlist?list=PL1PI2d-NlJ8vYBuEUI7USbepsn8IZt_Y1" target="_blank">
+        <span class="playlist-icon">⚙️</span>
+        <span class="playlist-name">[Lv.2] 클론코딩 - 설정앱</span>
+        <span class="playlist-arrow">&rarr;</span>
+      </a>
+      <a class="playlist-card" href="https://www.youtube.com/playlist?list=PL1PI2d-NlJ8tro-WXDI-DoS_ayy1C3SfK" target="_blank">
+        <span class="playlist-icon">💰</span>
+        <span class="playlist-name">[Lv.2] 클론코딩 - 팁앱</span>
+        <span class="playlist-arrow">&rarr;</span>
+      </a>
+      <a class="playlist-card" href="https://www.youtube.com/playlist?list=PL1PI2d-NlJ8uXVW33Co8zEBSH0opTYMY9" target="_blank">
+        <span class="playlist-icon">🧩</span>
+        <span class="playlist-name">[Lv.2] 기능단위 도움말</span>
+        <span class="playlist-arrow">&rarr;</span>
+      </a>
+      <a class="playlist-card" href="https://www.youtube.com/playlist?list=PL1PI2d-NlJ8uwMezrZ58Y-BOvhZVk5ZY4" target="_blank">
+        <span class="playlist-icon">🏗️</span>
+        <span class="playlist-name">[Lv.3] 따라해요 UIKit</span>
+        <span class="playlist-arrow">&rarr;</span>
+      </a>
+      <a class="playlist-card" href="https://www.youtube.com/playlist?list=PL1PI2d-NlJ8s6rcdSidGhYCjfPam2W3Q-" target="_blank">
+        <span class="playlist-icon">🌤️</span>
+        <span class="playlist-name">[Lv.3] 클론코딩 - 날씨앱</span>
+        <span class="playlist-arrow">&rarr;</span>
+      </a>
+      <a class="playlist-card" href="https://www.youtube.com/playlist?list=PL1PI2d-NlJ8tg6HUoXPuNrXfeUaVvY7Yr" target="_blank">
+        <span class="playlist-icon">🍰</span>
+        <span class="playlist-name">[Lv.3] 하나씩 꺼내먹는 SwiftUI</span>
+        <span class="playlist-arrow">&rarr;</span>
+      </a>
+      <a class="playlist-card" href="https://www.youtube.com/playlist?list=PL1PI2d-NlJ8sI3mKXFvfTa8wYsfGtlEsz" target="_blank">
+        <span class="playlist-icon">📚</span>
+        <span class="playlist-name">SwiftUI를 공부하고 싶으신 분</span>
+        <span class="playlist-arrow">&rarr;</span>
+      </a>
+      <a class="playlist-card" href="https://www.youtube.com/playlist?list=PL1PI2d-NlJ8uSECZQyOBlGWZYT5VjisRv" target="_blank">
+        <span class="playlist-icon">🌐</span>
+        <span class="playlist-name">Network 뽀개보기</span>
+        <span class="playlist-arrow">&rarr;</span>
+      </a>
+      <a class="playlist-card" href="https://www.youtube.com/playlist?list=PL1PI2d-NlJ8uP9Aw18YqdRYHmrzyUmNEH" target="_blank">
+        <span class="playlist-icon">🎓</span>
+        <span class="playlist-name">Swift Coding Class</span>
+        <span class="playlist-arrow">&rarr;</span>
+      </a>
+      <a class="playlist-card" href="https://www.youtube.com/playlist?list=PL1PI2d-NlJ8v2NiMOi6tkB9VAJz3UaiP6" target="_blank">
+        <span class="playlist-icon">📖</span>
+        <span class="playlist-name">HIG를 모조리 읽어보기</span>
+        <span class="playlist-arrow">&rarr;</span>
+      </a>
+      <a class="playlist-card" href="https://www.youtube.com/playlist?list=PL1PI2d-NlJ8tI4_ptzFuNUr7QZs1eMT4N" target="_blank">
+        <span class="playlist-icon">🚀</span>
+        <span class="playlist-name">앱 시작하기</span>
+        <span class="playlist-arrow">&rarr;</span>
+      </a>
+      <a class="playlist-card" href="https://www.youtube.com/playlist?list=PL1PI2d-NlJ8vUBDRbL0Zfwc29kdjNJvev" target="_blank">
+        <span class="playlist-icon">♻️</span>
+        <span class="playlist-name">지속 가능한 앱을 만드는 방법</span>
+        <span class="playlist-arrow">&rarr;</span>
+      </a>
+      <a class="playlist-card" href="https://www.youtube.com/playlist?list=PL1PI2d-NlJ8v4mAk0lur5t9o0vsTplI2c" target="_blank">
+        <span class="playlist-icon">📈</span>
+        <span class="playlist-name">성장부스팅</span>
+        <span class="playlist-arrow">&rarr;</span>
+      </a>
     </div>
   </div>
 </section>
@@ -917,15 +532,13 @@
           <span class="talk-meta">SyncSwift 2022</span>
         </div>
       </a>
-
       <a class="talk-card" href="https://www.youtube.com/watch?v=IAA0rG6ieLE" target="_blank">
         <img class="talk-thumb" src="https://img.youtube.com/vi/IAA0rG6ieLE/mqdefault.jpg" alt="데이터야놀자 2022" loading="lazy">
         <div class="talk-body">
-          <h3 class="talk-title">데이터를 저장하는데, 데이터 베이스는 너무 어렵지 않나요?</h3>
+          <h3 class="talk-title">데이터를 저장하는데, DB는 너무 어렵지 않나요?</h3>
           <span class="talk-meta">데이터야놀자 2022</span>
         </div>
       </a>
-
       <a class="talk-card" href="https://www.youtube.com/watch?v=V6d_f9q2EUg" target="_blank">
         <img class="talk-thumb" src="https://img.youtube.com/vi/V6d_f9q2EUg/mqdefault.jpg" alt="adiOS 2022" loading="lazy">
         <div class="talk-body">
@@ -933,7 +546,6 @@
           <span class="talk-meta">adiOS 2022</span>
         </div>
       </a>
-
       <a class="talk-card" href="https://www.youtube.com/watch?v=loJeC6vZUlo" target="_blank">
         <img class="talk-thumb" src="https://img.youtube.com/vi/loJeC6vZUlo/mqdefault.jpg" alt="let us: Go! 2022" loading="lazy">
         <div class="talk-body">
@@ -941,7 +553,6 @@
           <span class="talk-meta">let us: Go! 2022</span>
         </div>
       </a>
-
       <a class="talk-card" href="https://www.youtube.com/watch?v=5UVvRsKEsDI" target="_blank">
         <img class="talk-thumb" src="https://img.youtube.com/vi/5UVvRsKEsDI/mqdefault.jpg" alt="adiOS 2021" loading="lazy">
         <div class="talk-body">
@@ -949,7 +560,6 @@
           <span class="talk-meta">adiOS 2021</span>
         </div>
       </a>
-
       <a class="talk-card" href="https://www.youtube.com/watch?v=diodVQ0yO_Y" target="_blank">
         <img class="talk-thumb" src="https://img.youtube.com/vi/diodVQ0yO_Y/mqdefault.jpg" alt="402A 키노트" loading="lazy">
         <div class="talk-body">
@@ -958,9 +568,43 @@
         </div>
       </a>
     </div>
-
-    <div class="talks-more">
+    <div class="section-more">
       <a href="https://www.youtube.com/playlist?list=PL1PI2d-NlJ8uevoi-fHG89GYhYd_65X13" target="_blank" class="btn btn--outline">전체 발표 영상 보기 (15+) &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WRITING ===== -->
+<section id="writing" class="section animate-on-scroll">
+  <div class="container">
+    <p class="section-label">Blog</p>
+    <h2 class="section-title">쓴 것들</h2>
+    <p class="section-desc">개발, 교육, 1인 비즈니스에 대한 생각을 글로 정리합니다.</p>
+
+    <div class="card-grid">
+      <a class="card" href="https://leeo.ghost.io/naneun-nuguege-mueoseul-eoddeohge-jeondalhal-geosinga-baibeukoding-jeone-cajaya-hal-jilmune-dabeul-cajneun-beob/" target="_blank">
+        <span class="card-badge badge--gold">Blog</span>
+        <h3 class="card-title">나는 누구에게, 무엇을, 어떻게 전달할 것인가?</h3>
+        <p class="card-desc">바이브코딩 전에 찾아야 할 질문. 돈을 버는 개발자와 그렇지 못한 개발자를 나누는 원초적 요소.</p>
+        <div class="card-hint">2026.02.25</div>
+      </a>
+
+      <a class="card" href="https://leeo.ghost.io/1in-gaebaljaga-doneul-beoneun-jinjja-iyu-seonggong-sarye-haebu/" target="_blank">
+        <span class="card-badge badge--gold">Blog</span>
+        <h3 class="card-title">1인 개발자가 돈을 버는 진짜 이유 — 성공 사례 해부</h3>
+        <p class="card-desc">실제 수익을 낸 1인 개발자들의 사례를 분석하며, 바이브 코딩 너머의 본질을 이야기합니다.</p>
+        <div class="card-hint">2026.02.24</div>
+      </a>
+
+      <a class="card" href="https://leeo.ghost.io/gongbueneun-wangdoga-eobsda-hajiman-namanyi-gileun-issda/" target="_blank">
+        <span class="card-badge badge--gold">Blog</span>
+        <h3 class="card-title">공부에는 왕도가 없다, 하지만 '나만의 길'은 있다</h3>
+        <p class="card-desc">학습 DNA 진단 프로젝트를 통해 개발자 성장의 맞춤형 학습 방법을 탐색합니다.</p>
+        <div class="card-hint">2026.02.20</div>
+      </a>
+    </div>
+    <div class="section-more">
+      <a href="https://leeo.ghost.io/" target="_blank" class="btn btn--outline">블로그 전체 글 보기 &rarr;</a>
     </div>
   </div>
 </section>
@@ -970,7 +614,6 @@
   <div class="container">
     <p class="section-label">Tech Stack</p>
     <h2 class="section-title">사용하는 기술</h2>
-
     <div class="stack-grid">
       <span class="stack-item">Swift</span>
       <span class="stack-item">SwiftUI</span>
@@ -996,7 +639,6 @@
   <div class="container">
     <h2 class="contact-title">Let's Connect</h2>
     <p class="contact-desc">강의 문의, 협업 제안, 커뮤니티 참여 모두 환영합니다.</p>
-
     <div class="contact-links">
       <a href="mailto:leeo@kakao.com" class="contact-link">Email</a>
       <a href="https://www.youtube.com/@Leeo25" target="_blank" class="contact-link">YouTube</a>
@@ -1009,7 +651,6 @@
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
 <footer>
   <div class="container">
     <p class="footer-copy">&copy; 2025 Leeo. Built with passion, shipped solo.</p>
@@ -1018,11 +659,8 @@
 
 <script>
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
   }, { threshold: 0.1 });
-
   document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 </script>
 
