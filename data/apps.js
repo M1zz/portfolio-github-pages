@@ -59,6 +59,21 @@ const APPS_DATA = {
       "hintEn": "Open Gallery"
     },
     {
+      "id": "ios-concept-lab",
+      "name": "iOS 개념 시각화 LAB",
+      "nameEn": "iOS Concept Visualization LAB",
+      "url": "https://m1zz.github.io/ios-concept-lab/",
+      "type": "row",
+      "badge": "Interactive Lab · 13 Concepts",
+      "badgeColor": "red",
+      "gradient": "135deg,#f97316,#ea580c",
+      "icon": "🧪",
+      "desc": "13가지 iOS 핵심 개념을 인터랙티브하게 학습. ARC, async/await, Closure Capture, MVVM 등을 눈으로 보고 손으로 느끼는 시각화 플랫폼.",
+      "descEn": "Learn 13 core iOS concepts interactively. Visualize ARC, async/await, Closure Capture, MVVM, and more — see it, feel it.",
+      "hint": "LAB 바로가기",
+      "hintEn": "Open LAB"
+    },
+    {
       "id": "mentee-quiz",
       "name": "학습 유형 진단",
       "nameEn": "Learning Type Diagnostic",
