@@ -1,5 +1,5 @@
 const APPS_DATA = {
-  "webProjects": [
+  "libraryProjects": [
     {
       "id": "claude-code-101",
       "name": "Claude Code 101 — 완전 입문 가이드",
@@ -59,6 +59,36 @@ const APPS_DATA = {
       "hintEn": "Open Gallery"
     },
     {
+      "id": "cs-visualizer",
+      "name": "CS Visualizer",
+      "url": "https://m1zz.github.io/cs-visualizer/",
+      "type": "row",
+      "badge": "Education · 14 Chapters",
+      "badgeColor": "blue",
+      "gradient": "135deg,#4a9eff,#2563eb",
+      "icon": "💻",
+      "desc": "이진수부터 고급 알고리즘까지 — 컴퓨터 공학 핵심 개념을 인터랙티브 시각화로 체험. 전공 배경 없이도 접근 가능한 14개 챕터.",
+      "descEn": "From binary to advanced algorithms — experience core CS concepts through interactive visualization. 14 chapters accessible without a CS background.",
+      "hint": "CS 시각화 바로가기",
+      "hintEn": "Open Visualizer"
+    },
+    {
+      "id": "ios-arch-lab",
+      "name": "iOSArchLab",
+      "url": "https://m1zz.github.io/iOSArchLab",
+      "type": "row",
+      "badge": "Architecture · iOS",
+      "badgeColor": "purple",
+      "gradient": "135deg,#a78bfa,#7c3aed",
+      "icon": "🏛️",
+      "desc": "iOS 앱 아키텍처 패턴을 실습으로 배우는 학습 플랫폼. MVC, MVVM, TCA 등 다양한 아키텍처를 코드로 비교하며 익힌다.",
+      "descEn": "A hands-on learning platform for iOS app architecture patterns. Compare MVC, MVVM, TCA, and more through working code examples.",
+      "hint": "iOSArchLab 바로가기",
+      "hintEn": "Open iOSArchLab"
+    }
+  ],
+  "toolProjects": [
+    {
       "id": "mentee-quiz",
       "name": "학습 유형 진단",
       "nameEn": "Learning Type Diagnostic",
@@ -100,34 +130,6 @@ const APPS_DATA = {
       "descEn": "Interactively explore customer problems and solutions across Korea's industry ecosystem. 13 sectors visualized as forward/reverse trees and network graphs.",
       "hint": "탐색기 바로가기",
       "hintEn": "Open Explorer"
-    },
-    {
-      "id": "cs-visualizer",
-      "name": "CS Visualizer",
-      "url": "https://m1zz.github.io/cs-visualizer/",
-      "type": "row",
-      "badge": "Education · 14 Chapters",
-      "badgeColor": "blue",
-      "gradient": "135deg,#4a9eff,#2563eb",
-      "icon": "💻",
-      "desc": "이진수부터 고급 알고리즘까지 — 컴퓨터 공학 핵심 개념을 인터랙티브 시각화로 체험. 전공 배경 없이도 접근 가능한 14개 챕터.",
-      "descEn": "From binary to advanced algorithms — experience core CS concepts through interactive visualization. 14 chapters accessible without a CS background.",
-      "hint": "CS 시각화 바로가기",
-      "hintEn": "Open Visualizer"
-    },
-    {
-      "id": "ios-arch-lab",
-      "name": "iOSArchLab",
-      "url": "https://m1zz.github.io/iOSArchLab",
-      "type": "row",
-      "badge": "Architecture · iOS",
-      "badgeColor": "purple",
-      "gradient": "135deg,#a78bfa,#7c3aed",
-      "icon": "🏛️",
-      "desc": "iOS 앱 아키텍처 패턴을 실습으로 배우는 학습 플랫폼. MVC, MVVM, TCA 등 다양한 아키텍처를 코드로 비교하며 익힌다.",
-      "descEn": "A hands-on learning platform for iOS app architecture patterns. Compare MVC, MVVM, TCA, and more through working code examples.",
-      "hint": "iOSArchLab 바로가기",
-      "hintEn": "Open iOSArchLab"
     }
   ],
   "iosApps": [
@@ -146,13 +148,8 @@ const APPS_DATA = {
         "download": "무료",
         "lifetime": "₩14,000"
       },
-      "languages": [
-        "ko",
-        "en"
-      ],
-      "platforms": [
-        "iOS"
-      ]
+      "languages": ["ko", "en"],
+      "platforms": ["iOS"]
     },
     {
       "id": "rereminder",
@@ -169,14 +166,8 @@ const APPS_DATA = {
         "download": "무료",
         "lifetime": "₩14,000"
       },
-      "languages": [
-        "ko",
-        "en"
-      ],
-      "platforms": [
-        "iOS",
-        "watchOS"
-      ]
+      "languages": ["ko", "en"],
+      "platforms": ["iOS", "watchOS"]
     },
     {
       "id": "leave-wise",
@@ -193,15 +184,8 @@ const APPS_DATA = {
         "download": "무료",
         "lifetime": "₩6,600"
       },
-      "languages": [
-        "ko",
-        "en",
-        "ja",
-        "zh-Hans"
-      ],
-      "platforms": [
-        "iOS"
-      ]
+      "languages": ["ko", "en", "ja", "zh-Hans"],
+      "platforms": ["iOS"]
     },
     {
       "id": "pixel-meme",
@@ -220,13 +204,8 @@ const APPS_DATA = {
         "yearly": "₩44,000",
         "lifetime": "₩66,000"
       },
-      "languages": [
-        "ko",
-        "en"
-      ],
-      "platforms": [
-        "iOS"
-      ]
+      "languages": ["ko", "en"],
+      "platforms": ["iOS"]
     },
     {
       "id": "klosed",
@@ -243,13 +222,8 @@ const APPS_DATA = {
         "download": "무료",
         "lifetime": "₩6,600"
       },
-      "languages": [
-        "ko",
-        "en"
-      ],
-      "platforms": [
-        "iOS"
-      ]
+      "languages": ["ko", "en"],
+      "platforms": ["iOS"]
     }
   ],
   "macosApps": [
