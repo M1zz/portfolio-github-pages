@@ -59,6 +59,21 @@ const APPS_DATA = {
       "hintEn": "Open Gallery"
     },
     {
+      "id": "ios-concept-lab",
+      "name": "iOS 개념 시각화 LAB",
+      "nameEn": "iOS Concept Visualization LAB",
+      "url": "https://m1zz.github.io/ios-concept-lab/",
+      "type": "row",
+      "badge": "Interactive Lab · 13 Concepts",
+      "badgeColor": "red",
+      "gradient": "135deg,#f97316,#ea580c",
+      "icon": "🧪",
+      "desc": "13가지 iOS 핵심 개념을 인터랙티브하게 학습. ARC, async/await, Closure Capture, MVVM 등을 눈으로 보고 손으로 느끼는 시각화 플랫폼.",
+      "descEn": "Learn 13 core iOS concepts interactively. Visualize ARC, async/await, Closure Capture, MVVM, and more — see it, feel it.",
+      "hint": "LAB 바로가기",
+      "hintEn": "Open LAB"
+    },
+    {
       "id": "cs-visualizer",
       "name": "CS Visualizer",
       "url": "https://m1zz.github.io/cs-visualizer/",
@@ -144,10 +159,7 @@ const APPS_DATA = {
       "badgeColor": "blue",
       "desc": "자주 쓰는 문구를 키보드에서 바로 입력. 커스텀 키보드 익스텐션으로 어디서든 빠르게 붙여넣기.",
       "descEn": "Type frequently used phrases directly from the keyboard. A custom keyboard extension for quick pasting anywhere.",
-      "pricing": {
-        "download": "무료",
-        "lifetime": "₩14,000"
-      },
+      "pricing": { "download": "무료", "lifetime": "₩14,000" },
       "languages": ["ko", "en"],
       "platforms": ["iOS"]
     },
@@ -162,10 +174,7 @@ const APPS_DATA = {
       "badgeColor": "purple",
       "desc": "타이머 끝나기 전에 미리 알림. 10분, 5분, 1분 전 프리얼럿 + 초과시간 추적 + Dynamic Island + Apple Watch 연동.",
       "descEn": "Get notified before your timer runs out. Pre-alerts at 10, 5, and 1 minute + overtime tracking + Dynamic Island + Apple Watch.",
-      "pricing": {
-        "download": "무료",
-        "lifetime": "₩14,000"
-      },
+      "pricing": { "download": "무료", "lifetime": "₩14,000" },
       "languages": ["ko", "en"],
       "platforms": ["iOS", "watchOS"]
     },
@@ -180,10 +189,7 @@ const APPS_DATA = {
       "badgeColor": "gold",
       "desc": "스마트 연차 관리. AI 황금연휴 추천, 반차/반반차 관리, 보너스 연차, 홈 위젯, iCloud 백업. 한/영/일/중 4개국 지원.",
       "descEn": "Smart annual leave management. AI golden holiday suggestions, half-day tracking, bonus leave, home widget, iCloud backup. Available in KO · EN · JA · ZH.",
-      "pricing": {
-        "download": "무료",
-        "lifetime": "₩6,600"
-      },
+      "pricing": { "download": "무료", "lifetime": "₩6,600" },
       "languages": ["ko", "en", "ja", "zh-Hans"],
       "platforms": ["iOS"]
     },
@@ -198,12 +204,7 @@ const APPS_DATA = {
       "badgeColor": "red",
       "desc": "사진을 픽셀 아트로 변환. 9가지 레트로 팔레트, AI 디더링, CRT 필터, GIF 애니메이션, 레이어 시스템.",
       "descEn": "Transform photos into pixel art. 9 retro palettes, AI dithering, CRT filter, GIF animation, layer system.",
-      "pricing": {
-        "download": "무료",
-        "monthly": "₩6,600",
-        "yearly": "₩44,000",
-        "lifetime": "₩66,000"
-      },
+      "pricing": { "download": "무료", "monthly": "₩6,600", "yearly": "₩44,000", "lifetime": "₩66,000" },
       "languages": ["ko", "en"],
       "platforms": ["iOS"]
     },
@@ -218,10 +219,7 @@ const APPS_DATA = {
       "badgeColor": "green",
       "desc": "대형마트 휴무일 알리미. 이마트, 코스트코, 홈플러스, 트레이더스 휴무일을 위젯과 D-Day 알림으로 확인.",
       "descEn": "Hypermarket holiday notifier. Check Emart, Costco, Homeplus, and Traders closing days via widget and D-Day alerts.",
-      "pricing": {
-        "download": "무료",
-        "lifetime": "₩6,600"
-      },
+      "pricing": { "download": "무료", "lifetime": "₩6,600" },
       "languages": ["ko", "en"],
       "platforms": ["iOS"]
     }
